@@ -1,0 +1,11 @@
+{
+  "name": "node-convertor",
+  "version": "1.0.0",
+  "description": "간단한 영어 변환기",
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev"
+  },
+  "author": "daeun-kim",
+  "license": "ISC"
+}
