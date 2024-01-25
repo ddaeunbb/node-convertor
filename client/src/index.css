@@ -12,6 +12,33 @@
   margin: 0;
 }
 
+@keyframes fadein {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadein 1s;
+}
+
+.fade-out {
+  animation: fadeout 1s; 
+  opacity: 0;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -46,9 +73,20 @@
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.heading {
   font-size: 24px;
   font-weight: 900;
   margin-bottom: 12px;
+}
+
+.icon {
+  width: 28px;
+  fill: #4f46e5;
 }
 
 .summary {
@@ -82,6 +120,12 @@
   font-weight: 800;
 }
 
+.string-convertor span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #707070;
+}
+
 .button-wrap {
   display: flex;
   column-gap: 8px;
@@ -103,6 +147,48 @@
 
 .button:hover {
   background-color: rgb(56, 44, 215);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrap {
+  position: relative;
+  padding: 40px 80px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.modal h3 {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.modal button {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.modal button:hover {
+  background-color: #4f46e5
 }
 
 @media screen and (max-width: 640px) {
